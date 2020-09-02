@@ -61,8 +61,14 @@ router.post('/login', (req, res) => {
             return;
         }
 
-        res.json({ user: dbUserData });
-    });
+        const validPassword = dbUserData.checkPassword(req.body.password);
+        if (!validPassword) {
+          res.status(400).json({ message: 'Incorrect password' });
+          return;
+        }
+    
+        res.json({ user: dbUserData, message: 'You are now logged in' });
+      });
 
 });
 
