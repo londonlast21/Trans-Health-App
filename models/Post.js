@@ -30,7 +30,7 @@ Post.init(
         //     type: DataTypes.STRING,
         //     references: {
         //         model: 'user',
-        //         key: 'username'
+        //         key: 'user_id'
         //     }
         // }
     },

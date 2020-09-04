@@ -5,7 +5,7 @@ const { User, Post, Comment } = require('../../models');
 router.get('/', (req, res) => {
 
     User.findAll({
-       // attributes: { exclude: ['password'] }
+       attributes: { exclude: ['password'] }
     })
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
@@ -23,21 +23,16 @@ router.get('/:id', (req, res) => {
             id: req.params.id
         },
         //models go here
-        include: [
-            {
-                model: Post,
-                attributes: ['id', 'name', 'location', 'created_at']
-            },
-            {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'created_at'],
-                include: {
-                    model: Post,
-                    attributes: ['name']
-                }
-            },
-           
-        ]
+        // include: [
+        //     {
+        //         model: Comment,
+        //         attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+        //         include: {
+        //             model: User,
+        //             attributes: ['username']
+        //         }
+        //     }
+        // ]
     })
         .then(dbUserData => {
             if (!dbUserData) {
