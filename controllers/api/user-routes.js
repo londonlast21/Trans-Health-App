@@ -74,6 +74,7 @@ router.post('/login', (req, res) => {
         }
 
         const validPassword = dbUserData.checkPassword(req.body.password);
+       
         if (!validPassword) {
           res.status(400).json({ message: 'Incorrect password' });
           return;
@@ -129,5 +130,20 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
+// log out and destroy session
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else {
+        res.status(404).end();
+    }
+});
+
+
 
 module.exports = router;
