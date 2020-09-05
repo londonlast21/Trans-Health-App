@@ -1,1 +1,14 @@
-<div>You are on the homepage</div>
+<ol class="post-list">
+    <li>
+        <article class="post">
+            <div class="name">
+                <h2>{{name}}</h2>
+                <h3>{{location}}</h3>
+                <p>Posted by: {{user.username}}</p>
+            </div>
+            <div class="meta">
+                <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+            </div>
+        </article>
+    </li>
+</ol>
