@@ -1,12 +1,14 @@
 <ol class="post-list">
+    <p>{{posts.length}} providers in the system</p>
     {{#each posts}}
   <li>
       <!--encases entire post and comments-->
     <article class="post">
+        
       
        <!--part for the info from post-->
-        <h1>{{name}}</h1>
-        <h3>{{location}}</h3>
+        <h2>{{name}}</h2>
+        <h4>{{location}}</h4>
         <p>added by {{user_id}}</p>
 
     <!--comments div-->
