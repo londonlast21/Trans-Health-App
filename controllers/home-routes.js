@@ -10,7 +10,8 @@ router.get('/', (req, res) => {
           'name',
           'location',
           'created_at',
-          'user.username'
+          'user_id'
+          
 
       ],
       include: [
