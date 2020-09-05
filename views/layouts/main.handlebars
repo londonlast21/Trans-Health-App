@@ -32,7 +32,9 @@
 <script type="text/javascript">
 
 async function logout() {
- console.log("clicked logout")
+ console.log("clicked logout");
+ const response = await fetch('/users/logout');
+
 };
 document.querySelector('#logout').addEventListener('click', logout);
 </script>
