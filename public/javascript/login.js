@@ -1,21 +1,21 @@
-function signupFormHandler(event) {
-    event.preventDefault();
+// function signupFormHandler(event) {
+//     event.preventDefault();
 
-    const username = document.querySelector('#username-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+//     const username = document.querySelector('#username-signup').value.trim();
+//     const password = document.querySelector('#password-signup').value.trim();
 
-    if (username && password) {
-        fetch('/api/users', {
-            method: 'post',
-            body: JSON.stringify({
-                username,
-                password
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        }).then((response) => {console.log(response)})
-    }
-}
+//     if (username && password) {
+//         fetch('/api/users', {
+//             method: 'post',
+//             body: JSON.stringify({
+//                 username,
+//                 password
+//             }),
+//             headers: { 'Content-Type': 'application/json' }
+//         }).then((response) => {console.log(response)})
+//     }
+// }
 
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+// document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
 
-console.log(err);
+// console.log(err);
