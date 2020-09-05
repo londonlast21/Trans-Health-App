@@ -14,6 +14,7 @@
 
 
 <!--add comments form-->
+
 <form class ="comment-form">
     <div>
         <textarea name="comment-body"></textarea>
@@ -30,7 +31,7 @@
     {{#each post.comments}}
     <section class="comment">
         <div class="meta">
-            {{user.username}}
+            {{user_id}}
         </div>
         <div class="text">
             {{comment_text}}
