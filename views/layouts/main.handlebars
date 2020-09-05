@@ -29,26 +29,14 @@
             {{{ body }}}
         </main>
     </div>
+<script type="text/javascript">
 
-    <script type="text/javascript">
-function logout() {
-  const response = fetch('/users/logout', {
-    method: 'post',
-    headers: { 'Content-Type': 'application/json' }
-  });
-
-  if (response.ok) {
-    document.location.replace('/');
-  } else {
-    alert(response.statusText);
-  }
-}
-
+async function logout() {
+ console.log("clicked logout")
+};
 document.querySelector('#logout').addEventListener('click', logout);
-
 </script>
-<!--bootstrap linked-->
-
+ 
 </body>
 
 </html>

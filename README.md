@@ -9,4 +9,5 @@
 - express
 - handlebars
 - express session'dashboard
-- bootstrap
+- pure css library
+- express.static
