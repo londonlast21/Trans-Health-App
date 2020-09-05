@@ -25,8 +25,12 @@ router.get('/', (req, res) => {
       ]
   })
   .then(dbPostData => {
-      res.render('homepage', dbPostData[0]);
+      res.render('homepage', dbPostData[0])
   })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 
 
 });
