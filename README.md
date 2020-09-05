@@ -8,3 +8,4 @@
 - node.js
 - express
 - handlebars
+- express session
