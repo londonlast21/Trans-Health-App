@@ -18,7 +18,7 @@
              <nav>
                 
                  <a href="/dashboard">Dashboard</a>
-                 <button id="logout" class="logout">Log Out</button>
+                 <button id="logout" class="btn-no-style">Log Out</button>
                 
                  <a href="/login">Log In</a>
                  
@@ -31,11 +31,21 @@
     </div>
 
     <script type="text/javascript">
-async function logout() {
-    console.log("hello");
+function logout() {
+  const response = fetch('/users/logout', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/json' }
+  });
 
+  if (response.ok) {
+    document.location.replace('/');
+  } else {
+    alert(response.statusText);
+  }
 }
+
 document.querySelector('#logout').addEventListener('click', logout);
+
 </script>
 <!--bootstrap linked-->
 
