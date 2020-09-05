@@ -7,3 +7,4 @@
 - bcrypt
 - node.js
 - express
+- handlebars

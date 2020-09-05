@@ -17,6 +17,8 @@ const { Post, User, Comment } = require('../models');
 //     });
 // });
 
+// route to get posts and load to homepage
+
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
@@ -54,6 +56,10 @@ router.get('/', (req, res) => {
 
 
 
+// route to login page
+router.get('/login', (req, res) => {
+    res.render('login');
+})
 
     
 module.exports = router;
