@@ -4,4 +4,6 @@
 - sequelize
 - dotenv
 - mysql2
-- 
+- bcrypt
+- node.js
+- express
