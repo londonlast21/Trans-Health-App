@@ -13,8 +13,12 @@
             <a href="/">Trans-safe Directory</a>
              </h1>
              <nav>
-                 <a href="/login">Log In</a>
+                
+                 <a href="/dashboard">Dashboard</a>
                  <button id="logout" class="logout">Log Out</button>
+                
+                 <a href="/login">Log In</a>
+                 
              </nav>
         </header>
         <main>
@@ -25,7 +29,7 @@
 
     <script type="text/javascript">
 async function logout() {
-    const response = await fetch('/api/users/logout', {
+    let response = await fetch('/api/users/logout', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' }
     });
