@@ -1,5 +1,5 @@
 <article class="post" style="text-align:center;">
-    <div class="name">
+    <div class="name" style="padding: 10px">
         <h1>{{post.name}}</h1>
         <h4>{{post.location}}</h4>
         <p> added by {{post.user_id}}</p>
@@ -27,10 +27,10 @@
 </form>
 
 
-<div class="comments">
+<div class="comments" style="padding: 10px; margin: 10px">
     {{#each post.comments}}
-    <section class="comment">
-        <div class="meta">
+    <section class="comment" style="padding:8px;">
+        <div class="meta" style="color:cornflowerblue;">
             {{user_id}}
         </div>
         <div class="text">
