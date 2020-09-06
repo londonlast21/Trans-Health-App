@@ -83,7 +83,10 @@ async function loginFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
 
+
+
         if (response.ok) {
+            localStorage.setItem('username', username)
             document.location.replace('/');
         } else {
             alert(response.statusText);
