@@ -14,7 +14,7 @@
 
 
 <!--add comments form-->
-
+{{#if loggedIn}}
 <form class ="comment-form" style="text-align:center;">
     <div>
         <textarea name="comment-body"></textarea>
@@ -25,6 +25,7 @@
     
     </div>
 </form>
+{{/if}}
 
 
 <div class="comments" style="padding: 10px; margin: 10px">
@@ -75,3 +76,6 @@
 document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
 </script>
 
+{{#if loggedIn}}
+<script src="javasript/comment.js"></script>
+{{/if}}
