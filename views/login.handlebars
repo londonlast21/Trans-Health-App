@@ -63,6 +63,8 @@ async function signupFormHandler(event) {
             console.log('success');
         } else {
             alert(response.statusText);
+        } catch (err) {
+            alert(err)
         }
     }
 };
@@ -90,6 +92,8 @@ async function loginFormHandler(event) {
             document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
+        } catch (err) {
+            alert(err);
         }
     }
 };

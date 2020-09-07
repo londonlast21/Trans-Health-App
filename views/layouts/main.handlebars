@@ -61,6 +61,8 @@ async function logout() {
     } else {
         console.log('else statement hit')
       alert(response.statusText);
+    } catch (err) {
+        alert(err);
     }
 };
 
