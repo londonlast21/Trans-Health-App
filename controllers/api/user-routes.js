@@ -136,7 +136,9 @@ router.delete('/:id', (req, res) => {
 
 
 // log out and destroy session
-router.post('/api/users/logout', (req, res) => {
+
+router.post('/logout', (req, res) => {
+    
     if (req.session.loggedIn) {
         req.session.destroy(() => {
           res.status(204).end();

@@ -45,8 +45,9 @@
 async function logout() {
 
  console.log("clicked logout");
+ 
 
-    const response = await fetch('/api/user/logout', {
+    const response = await fetch('/api/users/logout', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' }
     });
@@ -54,6 +55,7 @@ async function logout() {
     if (response.ok) {
       document.location.replace('/');
     } else {
+        console.log('else statement hit')
       alert(response.statusText);
     }
 };

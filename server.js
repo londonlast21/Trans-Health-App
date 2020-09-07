@@ -22,15 +22,12 @@ const PORT = process.env.PORT || 3001;
 
 
 app.use(session(sess));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-
-
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(routes);
+
 
 //app.use(express.static(''));
 
