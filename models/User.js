@@ -39,7 +39,7 @@ User.init(
           async beforeUpdate(updatedUserData) {
               updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
               return updatedUserData;
-          }
+          } 
 
         },
         sequelize,
@@ -48,6 +48,10 @@ User.init(
         underscored: true,
         modelName: 'user'
     }
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    }) 
 );
 
 module.exports = User;

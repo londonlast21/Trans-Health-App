@@ -150,7 +150,9 @@ router.post('/logout', (req, res) => {
       else {
           console.log("hit exit in back end");
         res.status(404).end();
-      }
+      } 
+
+      
 
 });
 
