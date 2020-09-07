@@ -81,10 +81,12 @@ router.post('/login', (req, res) => {
           res.status(400).json({ message: 'Incorrect password' });
           return;
         }
+        req.session.user_id = dbUserData.dataValues.id;
+        req.session.username = dbUserData.dataValues.username;
+        req.session.loggedIn = true;
         req.session.save(() => {
-            req.session.user_id = dbUserData.dataValues.id;
-            req.session.username = dbUserData.dataValues.username;
-            req.session.loggedIn = true;
+         
+            console.log("req.session saved");
         })
         console.log("hello", dbUserData);
     
@@ -138,13 +140,15 @@ router.delete('/:id', (req, res) => {
 // log out and destroy session
 
 router.post('/logout', (req, res) => {
-    
+    console.log("hit ok in back end");
+    console.log(req.session);
     if (req.session.loggedIn) {
         req.session.destroy(() => {
           res.status(204).end();
         });
       }
       else {
+          console.log("hit exit in back end");
         res.status(404).end();
       }
 
