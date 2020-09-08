@@ -7,7 +7,6 @@
         body {margin: 25px;}
         nav {margin-left: 30px;}
         
-
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,12 +25,13 @@
             <a href="/" style="margin-left: 40px;">Trans-safe Directory</a>
              </h1>
              <nav style="padding:15px">
-                
-                 <a href="/dashboard">Add a Provider</a>
-                
-                 <a href="/login">Log In</a>
-                 
+
+                {{#if loggedIn}}
+                <a href="/dashboard">Add a Provider</a>
                  <button id="logout" class="btn-no-style">Log Out</button>
+                {{else}}
+                 <a href="/login">Log In</a>
+                 {{/if}}
              </nav>
         </header>
         <main>
@@ -39,14 +39,13 @@
             {{{ body }}}
         </main>
     </div>
+
+
+    {{#if loggedIn}}
 <script type="text/javascript">
-
-
 async function logout() {
-
  console.log("clicked logout");
  
-
     const response = await fetch('/api/users/logout', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' }
@@ -58,10 +57,11 @@ async function logout() {
         console.log('else statement hit')
       alert(response.statusText);
     }
+    
 };
 document.querySelector('#logout').addEventListener('click', logout);
 </script>
- 
+ {{/if}}
 </body>
 
 </html>
