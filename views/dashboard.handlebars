@@ -16,3 +16,15 @@
 </form>
 </section>
 
+{{#if posts.length}}
+<section>
+    <h3>Providers You Have Added:</h3>
+    <ul>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
