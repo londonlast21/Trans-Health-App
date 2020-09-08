@@ -61,9 +61,7 @@ async function logout() {
     } else {
         console.log('else statement hit')
       alert(response.statusText);
-    } catch (err => {
-        console.log(err);
-    })
+    
 };
 
 document.querySelector('#logout').addEventListener('click', logout);
