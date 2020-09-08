@@ -17,8 +17,4 @@ if (process.env.JAWSDB_URL) {
   });
 }
 
-<<<<<<< HEAD
 module.exports = sequelize;
-=======
-module.exports = sequelize;
->>>>>>> feature/fixlogout
