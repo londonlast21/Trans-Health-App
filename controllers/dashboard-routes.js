@@ -45,42 +45,4 @@ router.get('/',  (req, res) => {
   });
 
 
-router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
-        where: {
-       
-          user_id: req.session.user_id
-        },
-        attributes: [
-          'id',
-         'location',
-         'name'
-       
-        ],
-        include: [
-          {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'post_id', 'user_id'],
-            include: {
-              model: User,
-              attributes: ['username']
-            }
-          },
-          {
-            model: User,
-            attributes: ['username']
-          }
-        ]
-      })
-        .then(dbPostData => {
-          
-          const post = dbPostData.get({ plain: true });
-          res.render('edit-post', { 
-              post,
-            loggedIn: true
-         });
-        })
-       
-
-});
 module.exports = router;

@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
 
+// test post
 // router.get('/', (req, res) => {
 //     res.render('homepage', {
 //         id: 1,
