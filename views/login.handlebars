@@ -63,7 +63,9 @@ async function signupFormHandler(event) {
             console.log('success');
         } else {
             alert(response.statusText);
-        }
+        } catch(err => {
+            console.log(err);
+        })
     }
 };
 // log in
