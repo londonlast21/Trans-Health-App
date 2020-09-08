@@ -3,6 +3,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 
+// get homepage
 router.get('/', (req, res) => {
     console.log('=============');
     Post.findAll({
@@ -30,6 +31,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// get acct page
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {

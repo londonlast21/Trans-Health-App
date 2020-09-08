@@ -40,9 +40,11 @@
 </div>
 {{/if}}
 
+
+<!-- show comments by users-->
 {{#if loggedIn}}
 <script type="text/javascript">
-    const user_id = localStorage.getItem('username');
+    const user_id = window.localStorage.getItem('username');
 
     console.log(user_id);
     async function commentFormHandler(event) {
@@ -70,11 +72,9 @@
             document.location.reload();
         } else {
             alert(response.statusText);
-        } catch(err => {
-            console.log(err);
-        })
+     
     }
-}
+};}
 document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
 </script>
 {{/if}}

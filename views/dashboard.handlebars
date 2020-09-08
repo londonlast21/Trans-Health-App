@@ -14,4 +14,18 @@
 <button type="submit" class="btn">Add Provider</button>
 
 </form>
+
+<!-- shows posts made by user -->
 </section>
+{{#if posts.length}}
+<section>
+    <h3>Providers You Have Added:</h3>
+    <ul>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
