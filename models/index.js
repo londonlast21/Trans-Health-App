@@ -4,6 +4,8 @@ const Post = require('./post');
 
 const Comment = require('./comment');
 
+const username = User.user_id;
+
 // associations
 User.hasMany(Post, {
     foreignKey: 'username'
