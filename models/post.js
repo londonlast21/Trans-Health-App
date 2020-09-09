@@ -20,17 +20,18 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        specialty: {
+            type: DataTypes.STRING,
+           allowNull: false
+        },
         user_id: {
             type: DataTypes.STRING,
             references: {
                 model: 'User',
                 key: 'username'
             }
-        },
-        specialty: {
-            type: DataTypes.STRING,
-           allowNull: false
         }
+       
     },
     {
         sequelize,

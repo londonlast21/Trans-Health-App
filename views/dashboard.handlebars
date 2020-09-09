@@ -63,19 +63,21 @@ async function newFormHandler(event) {
     const location = document.querySelector('input[name="location"]').value;
     console.log(location);
 
-    const user_id = window.localStorage.getItem('username');
 
     const specialty = document.querySelector('input[name="specialty"]').value;
     console.log(specialty);
 
-    const response = await fetch(`/api/posts`, {
+    const user_id = window.localStorage.getItem('username');
+
+    const response = await fetch(`/api/posts/`, {
         
         method: 'POST',
         body: JSON.stringify({
             name,
             location,
-            user_id,
-            specialty
+            specialty,
+            user_id
+
         }),
         headers: {
             'Content-Type': 'application/json'
