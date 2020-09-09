@@ -21,11 +21,24 @@
 <section>
     <h3>Providers You Have Added:</h3>
     <ul>
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post}}
-        </li>
-        {{/each}}
+          {{#each posts}}
+  <li>
+      
+    <article class="pure-u-1" style="text-align:center;">
+        
+      
+       <!--part for the info from post-->
+        <h2>{{name}}</h2>
+        <h4>{{location}}</h4>
+        
+
+    <!--comments div-->
+      <div class="pure-u-1">
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+      </div>
+    </article>
+  </li>
+  {{/each}}
     </ul>
 </section>
 {{/if}}
