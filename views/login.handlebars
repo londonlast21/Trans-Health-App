@@ -58,12 +58,21 @@ async function signupFormHandler(event) {
         });
         if (response.ok) {
             console.log('success');
+            window.alert("Success! Use your credentials to 'Log In'");
+            document.getElementById('username-signup').value='';
+            document.getElementById('password-signup').value='';
+            
         } else {
             alert(response.statusText);
         } 
 
+
         document.getElementById('username-signup').value='';
-        document.getElementById('password-signup').value='';
+            document.getElementById('password-signup').value='';
+            
+       
+
+     
     }
 };
 // log in
