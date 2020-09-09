@@ -58,14 +58,15 @@ async function signupFormHandler(event) {
         });
         if (response.ok) {
             console.log('success');
-            wondw.alert("Success! Use your credentials to 'Log In'");
+            window.alert("Success! Use your credentials to 'Log In'");
+             document.getElementById('username-signup').value='';
+        document.getElementById('password-signup').value='';
             
         } else {
             alert(response.statusText);
         } 
 
-        document.getElementById('username-signup').value='';
-        document.getElementById('password-signup').value='';
+       
 
      
     }
