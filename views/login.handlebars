@@ -61,6 +61,9 @@ async function signupFormHandler(event) {
         } else {
             alert(response.statusText);
         } 
+
+        document.getElementById('username-signup').value='';
+        document.getElementById('password-signup').value='';
     }
 };
 // log in
