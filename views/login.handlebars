@@ -11,7 +11,6 @@
     </div>
 
     <div>
-        <h4>Choose a username and password. Usernames already in use won't be accepted.</h4>
         <label for="password-login">password:</label>
         <input type="password" id="password-login" />
     </div>
@@ -25,6 +24,8 @@
 
 <!-- create account forms-->
 <form class="signup-form">
+      <h4>Choose a username and password.</br>If username is taken, the submission will not go through</h4>
+        
 
     <div>
         <label for="username-signup">username:</label>
@@ -62,7 +63,7 @@ async function signupFormHandler(event) {
         });
         if (response.ok) {
             console.log('success');
-            window.alert("Success! Use your credentials to 'Log In'");
+            window.alert("Success! Use your credentials to log in");
             document.getElementById('username-signup').value='';
             document.getElementById('password-signup').value='';
             
