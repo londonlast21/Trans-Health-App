@@ -58,9 +58,16 @@ async function signupFormHandler(event) {
         });
         if (response.ok) {
             console.log('success');
+            wondw.alert("Success! Use your credentials to 'Log In'");
+            
         } else {
             alert(response.statusText);
         } 
+
+        document.getElementById('username-signup').value='';
+        document.getElementById('password-signup').value='';
+
+     
     }
 };
 // log in
