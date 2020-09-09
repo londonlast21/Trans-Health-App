@@ -60,11 +60,12 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    console.log("hit post route");
     Post.create({
         name: req.body.name,
         location: req.body.location,
-        user_id: req.body.user_id,
-        user: req.body.username
+        user_id: req.body.user_id
+        
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
