@@ -11,7 +11,7 @@ router.get('/',  (req, res) => {
     Post.findAll({
       where: {
         // use the ID from the session
-        user_id: req.session.user_id
+        user_id: req.session.username
       },
       attributes: [
         'id',

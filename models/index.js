@@ -8,9 +8,7 @@ const Comment = require('./comment');
 
 // associations
 User.hasMany(Post);
-
 Post.belongsTo(User);
-
 Comment.belongsTo(User);
 Comment.belongsTo(Post);
 User.hasMany(Comment);
