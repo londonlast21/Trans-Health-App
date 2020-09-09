@@ -16,7 +16,8 @@ router.get('/',  (req, res) => {
       attributes: [
         'id',
         'location',
-        'name'
+        'name',
+        'specialty'
       ],
       include: [
         {

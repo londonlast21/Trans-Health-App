@@ -10,6 +10,10 @@
 <label for="location">Location</label>
 <input type="text" id="location" name="location" />
 </div>
+<div>
+<label for="specialty">Specialty</label>
+<input type="text" id="specialty" name="specialty" />
+</div>
 
 <button type="submit" class="btn">Add Provider</button>
 
@@ -30,6 +34,7 @@
        <!--part for the info from post-->
         <h2>{{name}}</h2>
         <h4>{{location}}</h4>
+        <h4>{{specialty}}</h4>
         
 
     <!--comments div-->
@@ -60,13 +65,17 @@ async function newFormHandler(event) {
 
     const user_id = window.localStorage.getItem('username');
 
+    const specialty = document.querySelector('input[name="specialty"]').value;
+    console.log(specialty);
+
     const response = await fetch(`/api/posts`, {
         
         method: 'POST',
         body: JSON.stringify({
             name,
             location,
-            user_id
+            user_id,
+            specialty
         }),
         headers: {
             'Content-Type': 'application/json'

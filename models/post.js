@@ -27,13 +27,10 @@ Post.init(
                 key: 'username'
             }
         },
-        // user: {
-        //     type: DataTypes.STRING,
-        //     references: {
-        //         model: 'user',
-        //         key: 'user_id'
-        //     }
-        // }
+        specialty: {
+            type: DataTypes.STRING,
+           allowNull: false
+        }
     },
     {
         sequelize,
