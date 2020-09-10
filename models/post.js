@@ -30,7 +30,6 @@ Post.init(
                 model: 'User',
                 key: 'username'
             },
-            allowNull: false
         }
        
     },
