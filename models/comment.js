@@ -19,15 +19,19 @@ Comment.init(
             
         },
         user_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'User',
-                key: 'username'
+                key: 'id'
             }
         },
         post_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            references: {
+                model: 'post',
+                key: 'id'
+            }
         }
         },
     
