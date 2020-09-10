@@ -54,7 +54,7 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    console.log("hit here");
+    console.log("hit async function");
 
     const name = document.querySelector('input[name="provider-name"]').value;
     console.log(name);
@@ -68,8 +68,9 @@ async function newFormHandler(event) {
     console.log(specialty);
 
     const user_id = window.localStorage.getItem('username');
+    console.log(user_id);
 
-    const response = await fetch(`/api/posts/`, {
+    const response = await fetch('/api/posts/', {
         
         method: 'POST',
         body: JSON.stringify({
@@ -85,8 +86,9 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
+        console.log( name, location, specialty, user_id)
        
-        document.location.replace('/dashboard');
+       // document.location.replace('/dashboard');
 
     } else {
         alert(response.statusText);

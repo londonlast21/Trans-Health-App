@@ -59,6 +59,8 @@ router.get('/:id', (req, res) => {
 
 });
 
+///make post
+
 router.post('/', (req, res) => {
     console.log("hit post route");
     Post.create({
