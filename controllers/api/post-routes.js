@@ -67,7 +67,7 @@ router.post('/', (req, res) => {
         name: req.body.name,
         location: req.body.location,
         specialty: req.body.specialty,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
         
         
     })

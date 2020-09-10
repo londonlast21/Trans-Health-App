@@ -51,8 +51,6 @@
 <!-- logic for add post-->
 
 <script type="text/javascript">
-
-
   
 async function newFormHandler(event) {
     event.preventDefault();
@@ -70,9 +68,7 @@ async function newFormHandler(event) {
     const specialty = document.querySelector('input[name="specialty"]').value;
     console.log(specialty);
 
-    
-
-   
+   const user_id = req.session.userId;
 
     const response = await fetch('/api/posts/', {
         
@@ -80,8 +76,8 @@ async function newFormHandler(event) {
         body: JSON.stringify({
             name,
             location,
-            specialty
-            
+            specialty,
+            user_id
 
         }),
         headers: {
