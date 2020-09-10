@@ -29,7 +29,8 @@ Post.init(
             references: {
                 model: 'User',
                 key: 'username'
-            }
+            },
+            allowNull: false
         }
        
     },
