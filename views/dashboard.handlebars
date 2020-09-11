@@ -70,13 +70,12 @@ async function newFormHandler(event) {
     const specialty = document.querySelector('input[name="specialty"]').value;
     console.log(specialty);
 
-    const user_id = userID;
+
 
     const user_data = { 
       name: name,
       location: location,
-      specialty: specialty,
-      user_id: user_id
+      specialty: specialty
     }
 
    
@@ -90,7 +89,7 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
-        console.log(  name, location, specialty, user_id );
+        console.log(  name, location, specialty);
        
        // document.location.replace('/dashboard');
 
