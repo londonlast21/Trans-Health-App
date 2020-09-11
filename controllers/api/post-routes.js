@@ -67,6 +67,7 @@ router.post('/', (req, res) => {
         name: req.body.name,
         location: req.body.location,
         specialty: req.body.specialty,
+        //this correctly adds an id when test in insomnia
         user_id: req.body.user_id
         
     })

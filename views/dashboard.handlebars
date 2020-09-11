@@ -51,7 +51,7 @@
 <!-- logic for add post-->
 
 <script type="text/javascript">
-
+const user_id = window.localStorage.getItem('username');
 
 async function newFormHandler(event) {
     event.preventDefault();
@@ -69,6 +69,9 @@ async function newFormHandler(event) {
 
     const specialty = document.querySelector('input[name="specialty"]').value;
     console.log(specialty);
+
+    
+    //console.log(user_id);
 
 
 
@@ -91,7 +94,7 @@ async function newFormHandler(event) {
     if (response.ok) {
         console.log(  name, location, specialty);
        
-       // document.location.replace('/dashboard');
+        //document.location.replace('/dashboard');
 
     } else {
         alert(response.statusText);
