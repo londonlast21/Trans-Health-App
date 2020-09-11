@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'name', 'location', 'specialty'],
+        attributes: ['id', 'name', 'location', 'specialty', 'user_id'],
         include: [
             {
                 model: User,
@@ -62,6 +62,8 @@ router.get('/:id', (req, res) => {
 ///make post
 
 router.post('/', (req, res) => {
+    console.log("here's the request");
+    console.log(req);
     console.log("hit post route");
     Post.create({
         name: req.body.name,
