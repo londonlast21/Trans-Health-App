@@ -7,7 +7,7 @@ const { Post, User, Comment } = require('../../models');
 router.get('/', (req, res) => {
     console.log('=============');
     Post.findAll({
-        attributes: ['id', 'name', 'location', 'soecialty', 'user_id'],
+        attributes: ['id', 'name', 'location', 'specialty', 'user_id'],
 
        include: [
            {
@@ -67,7 +67,7 @@ router.post('/', (req, res) => {
         name: req.body.name,
         location: req.body.location,
         specialty: req.body.specialty,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
         
     })
     .then(dbPostData => res.json(dbPostData))
