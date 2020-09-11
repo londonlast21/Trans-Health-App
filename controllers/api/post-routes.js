@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'name', 'location', 'specialty', 'user_id'],
+        attributes: ['id', 'name', 'location', 'specialty'],
         include: [
             {
                 model: User,
@@ -66,9 +66,7 @@ router.post('/', (req, res) => {
     Post.create({
         name: req.body.name,
         location: req.body.location,
-        specialty: req.body.specialty,
-        //this correctly adds an id when test in insomnia
-        user_id: req.body.user_id
+        specialty: req.body.specialty
         
     })
     .then(dbPostData => res.json(dbPostData))

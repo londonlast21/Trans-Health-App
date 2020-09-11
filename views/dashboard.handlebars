@@ -19,34 +19,7 @@
 
 </form>
 
-<!-- shows posts made by user -->
-</section>
-{{#if posts.length}}
-<section>
-    <h3>Providers You Have Added:</h3>
-    <ul>
-          {{#each posts}}
-  <li>
-      
-    <article class="pure-u-1" style="text-align:center;">
-        
-      
-       <!--part for the info from post-->
-        <h2>{{name}}</h2>
-        <h4>{{location}}</h4>
-        <h4>{{specialty}}</h4>
-        
 
-    <!--comments div-->
-      <div class="pure-u-1">
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-      </div>
-    </article>
-  </li>
-  {{/each}}
-    </ul>
-</section>
-{{/if}}
 
 <!-- logic for add post-->
 
@@ -79,8 +52,11 @@ async function newFormHandler(event) {
         body: JSON.stringify({
           name,
           location,
-          specialty}),
-          user_id,
+          specialty
+        
+        
+        }),
+      
 
         headers: {
           'Content-Type': 'application/json'
@@ -91,7 +67,7 @@ async function newFormHandler(event) {
     if (response.ok) {
         console.log(  name, location, specialty);
        
-        //document.location.replace('/dashboard');
+        document.location.replace('/');
 
     } else {
         alert(response.statusText);
