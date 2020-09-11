@@ -29,7 +29,6 @@ User.init(
             }
         }
     },
-    // table config here
     {
         hooks: {
           async beforeCreate(newUserData) {

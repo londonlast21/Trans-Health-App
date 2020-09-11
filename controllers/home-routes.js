@@ -2,22 +2,6 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
-
-// test post
-// router.get('/', (req, res) => {
-//     res.render('homepage', {
-//         id: 1,
-//         name: 'Dr. Shiri Raphaely',
-//         location: 'UW Health',
-//         user_id: "Jack",
-//         created_at: new Date(),
-//         comments: [{}, {}],
-//         user: {
-//             username: 'test_user'
-//         }
-//     });
-// });
-
 // route to get posts and load to homepage
 
 router.get('/', (req, res) => {
@@ -27,7 +11,8 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'name',
-            'location'
+            'location',
+            'specialty'
         ],
         include: [
             {
@@ -51,12 +36,12 @@ router.get('/', (req, res) => {
         res.render('homepage', { 
             posts,
         loggedIn: req.session.loggedIn });
-      })
-      .catch(err => {
+    })
+    .catch(err => {
         console.log(err);
         res.status(500).json(err);
-      });
-  });
+    });
+});
 
 
 
