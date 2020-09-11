@@ -51,11 +51,13 @@
 <!-- logic for add post-->
 
 <script type="text/javascript">
-  
+
+
 async function newFormHandler(event) {
     event.preventDefault();
 
     console.log("hit async function");
+
 
     const name = document.querySelector('input[name="provider-name"]').value;
     console.log(name);
@@ -68,27 +70,29 @@ async function newFormHandler(event) {
     const specialty = document.querySelector('input[name="specialty"]').value;
     console.log(specialty);
 
-   const user_id = req.session.userId;
+    const user_id = userID;
 
+    const user_data = { 
+      name: name,
+      location: location,
+      specialty: specialty,
+      user_id: user_id
+    }
+
+   
     const response = await fetch('/api/posts/', {
         
         method: 'POST',
-        body: JSON.stringify({
-            name,
-            location,
-            specialty,
-            user_id
-
-        }),
+        body: user_data,
         headers: {
             'Content-Type': 'application/json'
         }
     });
 
     if (response.ok) {
-        console.log(  name, location, specialty);
+        console.log(  name, location, specialty, user_id );
        
-        document.location.replace('/dashboard');
+       // document.location.replace('/dashboard');
 
     } else {
         alert(response.statusText);
