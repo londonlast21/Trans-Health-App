@@ -29,6 +29,9 @@
     </div>
 </form>
 
+<script>
+    
+</script>
 <div class="comments" style="padding: 10px; margin: 10px">
     {{#each post.comments}}
     <section class="comment" style="padding:8px;">
@@ -50,6 +53,7 @@
     const user_id = window.localStorage.getItem('username');
 
     console.log(user_id);
+    
     async function commentFormHandler(event) {
     event.preventDefault();
     const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
