@@ -4,7 +4,9 @@
 This app is a handy way to keep track of safe healthcare providers for transgender patients.
 Using it, people can add providers, and leave comments and reviews on them, in a semi-anonymous system.
 
-Based on only usernames and passwords, an account can be creted without a link to any real-life information.  Additionally, when viewing the site without an account, you will only be able to read existing orivder names and locations; no reviewss or comments are visible.
+Based on only usernames and passwords, an account can be creted without a link to any real-life information.  
+
+Additionally, when viewing the site without an account, you will only be able to read existing provider names and locations; no reviews or comments are visible.
 
 This allows user to feel comfortable to be honest in expressing their opinions!
 
