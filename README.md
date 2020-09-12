@@ -14,8 +14,11 @@ This allows user to feel comfortable to be honest in expressing their opinions!
 
 ## Technologies Used:
 - Node.js
+- Express.js
 - MySQL2
-- bcrypt
+- Sequelize
+- Bcrypt
+- Connect-session-sequelize
 - HTML
 - CSS
 - Pure CSS Library

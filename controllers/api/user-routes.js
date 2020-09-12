@@ -63,8 +63,9 @@ router.post('/', (req, res) => {
         res.json(dbUserData);
       });
     })
-  });
+});
 
+// log in route
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -98,7 +99,6 @@ router.post('/login', (req, res) => {
 
 
 // log out and destroy session
-
 router.post('/logout', (req, res) => {
     console.log("hit ok in back end");
     console.log(req.session);
