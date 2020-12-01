@@ -33,5 +33,5 @@ This allows user to feel comfortable to be honest in expressing their opinions!
 
 ## Links:
 
-- GitHub Repo: [https://github.com/londonlast21/project2]
-- Heroku Link: [https://limitless-meadow-67694.herokuapp.com/]
+- [GitHub Repo](https://github.com/londonlast21/project2)
+- [Heroku Link](https://limitless-meadow-67694.herokuapp.com/)
